@@ -1,27 +1,39 @@
-import React from 'react';
+// SplashScreen.tsx
+import React, { useEffect } from 'react';
 import { View, Text, Image, StatusBar, StyleSheet } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function SplashScreen() {
+type RootStackParamList = {
+  SplashScreen: undefined;
+  Onboarding1: undefined;
+  // Add other screens if needed (Onboarding2, etc.)
+};
+
+type SplashScreenNavigationProp = StackNavigationProp<RootStackParamList, 'SplashScreen'>;
+
+interface Props {
+  navigation: SplashScreenNavigationProp;
+}
+
+export default function SplashScreen({ navigation }: Props) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('Onboarding1'); // Navigating to Onboarding1 after 3 seconds
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
-      {/* Status Bar */}
       <StatusBar barStyle="light-content" backgroundColor="#020A3C" />
-
-      {/* App Name and Version at the Top */}
       <View style={styles.header}>
         <Text style={styles.appName}>Bomoko Fund</Text>
         <Text style={styles.version}>Version 1.1.0</Text>
       </View>
-
-      {/* Group 47 - Circular Graphics */}
       <View style={styles.graphicsContainer}>
         <View style={styles.largeCircle}>
           <View style={styles.smallCircle}>
-            <Image
-              source={require('../../assets/images/2hands.jpg')}
-              style={styles.iconImage}
-              resizeMode="cover"
-            />
+            <Image source={require('../../assets/images/2hands.jpg')} style={styles.iconImage} resizeMode="cover" />
           </View>
         </View>
       </View>
@@ -86,4 +98,3 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
-
