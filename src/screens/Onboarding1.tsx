@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, Text, Image, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
 
@@ -5,13 +6,13 @@ export default function Onboarding1() {
   return (
     <View style={styles.container}>
       {/* Status Bar */}
-      <StatusBar barStyle="light-content" backgroundColor="#000000" />
-      
+      <StatusBar barStyle="light-content" backgroundColor="#000000" translucent={false}/>
+
       {/* SKIP Button */}
       <TouchableOpacity style={styles.skipButton}>
-        <Text style={styles.skipText}>SKIP</Text>
+        <Text style={styles.skipText}>Skip</Text>
       </TouchableOpacity>
-      
+
       {/* Image and Ellipses */}
       <View style={styles.imageContainer}>
         <Image
@@ -25,7 +26,7 @@ export default function Onboarding1() {
 
       {/* Text Content */}
       <View style={styles.textContainer}>
-        <Text style={styles.heading}>Welcome to App name</Text>
+        <Text style={styles.heading}>Welcome to {'\n'} Bomoko Fund</Text>
         <Text style={styles.description}>
           Bring your ideas to life. Fund projects, support causes, and join a community of backers.
         </Text>
@@ -50,11 +51,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
+    // paddingTop: StatusBar.currentHeight || 50,
+    alignItems: 'center',
+    justifyContent:'space-evenly'
   },
   skipButton: {
-    position: 'absolute',
-    top: 16,
-    right: 16,
+        top: 60,
+        width: 70,
+        height: 40,
+        position: 'absolute',
+        left: 24,
+        borderRadius: 12,
+        backgroundColor: '#f3f5f7',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingRight: 16,
+        paddingLeft: 16,
+        paddingTop: 8,
+        paddingBottom: 8,
   },
   skipText: {
     color: '#000000',
@@ -62,38 +76,42 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   imageContainer: {
-    position: 'absolute',
-    top: 80,
-    left: 32,
+    width: 218,
+    height: 218,
+    marginTop: 150,
+    marginBottom: 10,
   },
   image: {
-    width: 144,
-    height: 144,
+    width: 146,
+    height: 146,
+    top:20,
+    left:40,
   },
   blueEllipse: {
     position: 'absolute',
-    top: 48,
-    left: -20,
+    top: 100, 
+    right: -20,
     width: 8,
     height: 8,
     backgroundColor: '#3B82F6',
     borderRadius: 4,
+    left:229, //add 229
+
   },
   greenEllipse: {
     position: 'absolute',
-    top: 96,
-    left: -10,
+    top: 150, //40 to 344
+    right: -10,
     width: 16,
     height: 16,
     backgroundColor: '#10B981',
     borderRadius: 8,
+    left:220, //add 229
   },
   textContainer: {
-    position: 'absolute',
-    top: 400,
-    left: 32,
-    width: 320,
+    marginTop: 40,
     alignItems: 'center',
+    paddingHorizontal: 32,
   },
   heading: {
     color: '#000000',
@@ -102,25 +120,26 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 40,
     letterSpacing: -0.5,
+    marginBottom: 5,  // Added to reduce space between heading and description
   },
   description: {
     color: '#6B7280',
     fontSize: 18,
     textAlign: 'center',
-    marginTop: 16,
+    marginTop: 20, //change 16 to 8
   },
   paginationContainer: {
-    position: 'absolute',
-    top: 600,
-    left: 128,
     flexDirection: 'row',
-    gap: 16,
+    marginTop: 3,// change 32 to  8
+    justifyContent: 'center',// added
+    gap: 5, //added
   },
   activeDot: {
     width: 10,
     height: 10,
     backgroundColor: '#3B82F6',
     borderRadius: 5,
+    marginHorizontal: 8,
   },
   inactiveDot: {
     width: 10,
@@ -128,11 +147,10 @@ const styles = StyleSheet.create({
     borderColor: '#9CA3AF',
     borderWidth: 1,
     borderRadius: 5,
+    marginHorizontal: 8,
   },
   getStartedButton: {
-    position: 'absolute',
-    bottom: 80,
-    left: 32,
+    marginTop: -20,//change 40 to 16
     width: 320,
     height: 56,
     backgroundColor: '#020A3C',
