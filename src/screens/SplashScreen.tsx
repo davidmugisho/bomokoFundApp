@@ -1,4 +1,4 @@
-// SplashScreen.tsx
+
 import React, { useEffect } from 'react';
 import { View, Text, Image, StatusBar, StyleSheet } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -6,7 +6,10 @@ import { StackNavigationProp } from '@react-navigation/stack';
 type RootStackParamList = {
   SplashScreen: undefined;
   Onboarding1: undefined;
-  // Add other screens if needed (Onboarding2, etc.)
+  Onboarding2: undefined;
+  // OnboardingNavigator: undefined;
+  Onboarding3 :undefined;
+
 };
 
 type SplashScreenNavigationProp = StackNavigationProp<RootStackParamList, 'SplashScreen'>;
@@ -18,7 +21,7 @@ interface Props {
 export default function SplashScreen({ navigation }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Onboarding1'); // Navigating to Onboarding1 after 3 seconds
+      navigation.replace('Onboarding2');
     }, 3000);
     return () => clearTimeout(timer);
   }, [navigation]);
