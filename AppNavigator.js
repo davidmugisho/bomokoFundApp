@@ -52,7 +52,7 @@ export default function AppNavigator() {
   return (
     <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
-      <Stack.Screen name="Onboarding" component={OnboardingNavigator} />
+      <Stack.Screen name="OnboardingNavigator" component={OnboardingNavigator} />
     </Stack.Navigator>
   );
 }

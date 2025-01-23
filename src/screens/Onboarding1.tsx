@@ -120,19 +120,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 40,
     letterSpacing: -0.5,
-    marginBottom: 5,  // Added to reduce space between heading and description
+    marginBottom: 5,  
   },
   description: {
     color: '#6B7280',
     fontSize: 18,
     textAlign: 'center',
-    marginTop: 20, //change 16 to 8
+    marginTop: 20, 
   },
   paginationContainer: {
     flexDirection: 'row',
-    marginTop: 3,// change 32 to  8
-    justifyContent: 'center',// added
-    gap: 5, //added
+    marginTop: 3,
+    justifyContent: 'center',
+    gap: 5,
   },
   activeDot: {
     width: 10,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   getStartedButton: {
-    marginTop: -20,//change 40 to 16
+    marginTop: -20,
     width: 320,
     height: 56,
     backgroundColor: '#020A3C',

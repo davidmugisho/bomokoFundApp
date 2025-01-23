@@ -33,7 +33,7 @@ export default function Onboarding2() {
 
       {/* Pagination Dots */}
       <View style={styles.paginationContainer}>
-        <View style={styles.activeDot} />
+        <View style={styles.inactiveDot} />
         <View style={styles.activeDot} />
         <View style={styles.inactiveDot} />
       </View>
@@ -133,14 +133,14 @@ const styles = StyleSheet.create({
   activeDot: {
     width: 10,
     height: 10,
-    backgroundColor: '#3B82F6',
+    backgroundColor: '#3B82F6',//9CA3AF
     borderRadius: 5,
     marginHorizontal: 8,
   },
   inactiveDot: {
     width: 10,
     height: 10,
-    borderColor: '#9CA3AF',
+    borderColor: '#3B82F6',//9CA3AF
     borderWidth: 1,
     borderRadius: 5,
     marginHorizontal: 8,

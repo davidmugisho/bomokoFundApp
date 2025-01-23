@@ -7,7 +7,7 @@ type RootStackParamList = {
   SplashScreen: undefined;
   Onboarding1: undefined;
   Onboarding2: undefined;
-  // OnboardingNavigator: undefined;
+  OnboardingNavigator: undefined;
   Onboarding3 :undefined;
 
 };
@@ -21,7 +21,7 @@ interface Props {
 export default function SplashScreen({ navigation }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Onboarding2');
+      navigation.replace('OnboardingNavigator');
     }, 3000);
     return () => clearTimeout(timer);
   }, [navigation]);
